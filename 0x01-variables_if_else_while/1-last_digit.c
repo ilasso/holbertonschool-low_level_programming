@@ -20,7 +20,7 @@ int main(void)
 
 if (lastdig > 5)
 {
-printf("Last digit of %d is %d and is greater than 5 and not 0\n", n, lastdig);
+printf("Last digit of %d is %d and is greater than 5\n", n, lastdig);
 }
 if (lastdig == 0)
 {

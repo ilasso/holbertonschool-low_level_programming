@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 /**
  * main - Entry point
@@ -19,6 +17,7 @@ int m = 97;
 		{
 			putchar(n);
 			putchar(m);
+
 			if (m < 57)
 			{
 				putchar(44);
@@ -31,9 +30,6 @@ int m = 97;
 			putchar(44);
 			putchar(32);
 		}
-
-
-
 
 	}
 

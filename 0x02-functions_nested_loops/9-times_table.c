@@ -39,7 +39,7 @@ void times_table(void)
 				_putchar(onedigit + '0');
 				_putchar(twodigit + '0');
 			}
-			else 
+			else
 			{
 				_putchar(result + '0');
 			}

@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  * _islower - say if a character is lower or not
  * @c: - charatecte to evaluate
@@ -16,4 +17,5 @@ int _islower(int c)
 	{
 		return (0);
 	}
+		return (0);
 }

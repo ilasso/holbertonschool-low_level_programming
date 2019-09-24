@@ -1,18 +1,19 @@
 #include "holberton.h"
 /**
- * main - Entry point
+ * print_alphabet - writes the alphabet lowercase  to stdout
  *
- * Return: Always 0 (Success)
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 void print_alphabet(void)
 {
 
-int n = 97;
+	int n = 97;
 
-for (n = 97; n < 123; n++)
-{
+	for (n = 97; n < 123; n++)
+	{
 		_putchar(n);
-}
+	}
 	_putchar(10);
 
 

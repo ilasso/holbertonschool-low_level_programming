@@ -32,10 +32,12 @@ void print_diagonal(int n)
 			if (j == i)
 			{
 				_putchar ('\\');
+				continue;
 			}
-			else
+			if (j < i)
 			{
-			_putchar (' ');
+				_putchar (' ');
+				continue;
 			}
 		}
 			_putchar ('\n');

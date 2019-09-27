@@ -2,7 +2,7 @@
 
 /**
  * print_diagonal - draws a diagonal line on the terminal.
- * @size : size of square
+ * @n: size of square
  * Return:  void
  * On error, -1 is returned, and errno is set appropriately.
  */

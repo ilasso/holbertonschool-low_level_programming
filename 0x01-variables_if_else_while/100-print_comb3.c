@@ -15,8 +15,7 @@ int m;
 		for (m = 0 + n; m < 10; m++)
 		{
 
-			/*if (n != m && n != 8 && n !=9) */
-			if (n != m) 
+			if (n != m)
 			{
 				putchar(n + '0');
 				putchar(m + '0');

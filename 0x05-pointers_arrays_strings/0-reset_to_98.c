@@ -1,22 +1,14 @@
 #include "holberton.h"
 
 /**
- * print_most_numbers -  print digits except 2 and 4
- *
+ * reset_to_98 -  Reset a number whith 98 value
+ * @n : Pointer to int. adress variable to reset
  * Return:  void
  * On error, -1 is returned, and errno is set appropriately.
  */
-void print_most_numbers(void)
+void reset_to_98(int *n)
 {
-	int i;
 
-	for (i = 0; i <= 9 ; i++)
-	{
-		if (!(i == 2 || i == 4))
-		{
-			_putchar (i + '0');
-		}
-	}
-	_putchar ('\n');
+	*n = 98;
 
 }

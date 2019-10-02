@@ -24,7 +24,7 @@ void rev_string(char *s)
 
 	i -= 1;
 
-	while (i  >= 0 && i != j)
+	while (i  > 0 && i != j)
 	{
 
 		revi = *(s + j);

@@ -11,25 +11,30 @@ void rev_string(char *s)
 {
 
 	int i = 0;
-	char rev;
-	int j=0;
-	
+	char revi;
+	char revf;
+	int j = 0;
 
-        i = _strlen(s);
+	i = _strlen(s) - 1;
 
-        while (i  > 0)
-        {
-                i--;
-		rev = *( s + i);
+	while (i  >= 0 && i != j)
+	{
 
-		*(s + i) = *(s + j);
+		if (j != i)
+		{
+			revi = *(s + j);
+			revf = *(s + i);
 
-		*(s + j) = rev;
+			*(s + i) = revi;
+
+			*(s + j) =  revf;
+		}
+
+		i--;
 
 		j++;
 
-		printf("(s+i)=%c, (s+j)=%c, rev=%c \n",*(s + i), *(s+j), rev);
-       }
+	}
 }
 
 /**

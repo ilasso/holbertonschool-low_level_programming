@@ -14,7 +14,15 @@ void rev_string(char *s)
 	char revf;
 	int j = 0;
 
-	i = _strlen(s) - 1;
+
+	while (*(s + i) != '\0')
+	{
+
+		i++;
+
+	}
+
+	i -= 1;
 
 	while (i  >= 0 && i != j)
 	{
@@ -29,26 +37,4 @@ void rev_string(char *s)
 		j++;
 
 	}
-}
-
-/**
- * _strlen   -  returns the length of a string.
- * @str : pointer to char
- * Return:  int
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _strlen(char *str)
-{
-	int i = 0;
-
-	while (*(str + i) != '\0')
-	{
-
-		i++;
-
-	}
-
-	return (i);
-
-
 }

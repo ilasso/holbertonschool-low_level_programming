@@ -29,7 +29,7 @@ void puts_half(char *str)
 	}
 	else
 	{
-		inic = (i - 1) / 2;
+		inic = ((i - 1) / 2) + 1;
 
 	}
 

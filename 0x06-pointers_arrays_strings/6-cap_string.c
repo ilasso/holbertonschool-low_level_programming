@@ -12,35 +12,28 @@ char *cap_string(char *a)
 {
 	char *b;
 
-	b = a; /*save initial pointer position*/
-
-
+	b = a;
 	while (*a != '\0')
 	{
-		/* checke if a is a letter */
-
-		if (*a == 32 || *a == 9 || *a == 10 || *a == 46)
+		if (*a == ' ' || *a == '\n' || *a == '!' || *a == '\t' || *a == 46)
 		{
 			a++;
 
-			if (*a == 10)
+			if (*a == '\n')
 			{
 				a++;
 			}
-
-
+			if (*a == '\0')
+			{
+				break;
+			}
 			if (*a >= 97 && *b <= 122)
 			{
 				*a -= 32;
 			}
-
 		}
-
 		a++;
 	}
-
 	a = b;
-
 	return (a);
-
 }

@@ -11,26 +11,27 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-
-
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i = 0;
 	unsigned int j = 0;
 	int counter = 0;
+	int sw = 0;
 
 	for (i = 0 ; s[i] != '\0'; i++)
 	{
+		sw = 0;
 		for (j = 0; accept[j] != '\0'; j++)
 		{
 			if (s[i] == accept[j])
 			{
 				counter++;
+				sw = 1;
 			}
-			else
-			{
-				return (counter);
-			}
+		}
+		if (sw == 0)
+		{
+			break;
 		}
 
 	}

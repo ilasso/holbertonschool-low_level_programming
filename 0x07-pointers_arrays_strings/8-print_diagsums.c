@@ -40,5 +40,7 @@ void print_diagsums(int *a, int size)
 		a += (size - 1);
 
 	}
+	a = b; /*restart pointer*/
+
 	printf("%d, %d\n", suma1, suma2);
 }

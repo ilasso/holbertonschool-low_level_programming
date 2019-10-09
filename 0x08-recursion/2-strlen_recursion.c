@@ -17,10 +17,12 @@ int _strlen_recursion(char *s)
 	{
 		return (0);
 	}
+	/**
+	 * va recorriendo pos x pos hasta '\0'
+	 * va retornando el valor de i q va contando
+	 */
+	i = 1 + _strlen_recursion(s + 1);
 
-	i = 1 + _strlen_recursion(s + 1); /*va recorriendo pos x pos hasta '\0' */
-					  /* va retornando el valor de i q va contando */
-
-	return(i); 
+	return (i);
 
 }

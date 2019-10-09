@@ -20,27 +20,27 @@ void print_diagsums(int *a, int size)
 	b = a;
 
 
-	suma1 += *a;
+	/*suma1 += *b;*/
 
 	while (i < (size * size))
 	{
-		suma1 += *a;
+		suma1 += *b;
 		i += (size + 1);
-		a += (size + 1);
+		b += (size + 1);
 	}
 
 	i =  size;
 
-	a = b + size - 1; /* go to inic another diagonar*/
+	b = a + size - 1; /* go to inic another diagonar*/
 
 	while (i < (size * size))
 	{
-		suma2 += *a;
+		suma2 += *b;
 		i += (size - 1);
-		a += (size - 1);
+		b += (size - 1);
 
 	}
-	a = b; /*restart pointer*/
+	b = a; /*restart pointer*/
 
 	printf("%d, %d\n", suma1, suma2);
 }

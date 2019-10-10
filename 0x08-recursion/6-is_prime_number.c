@@ -2,8 +2,11 @@
 #include <stdio.h>
 #include <strings.h>
 
+
+int prime_number(int n, int divisor);
+
 /**
- * is_prime_number- function that returns 1 if the input integer is 
+ * is_prime_number- function that returns 1 if the input integer is
  *		    a prime number, otherwise return 0.
  * @n :   input number
  * Return: int
@@ -12,46 +15,44 @@
 
 int is_prime_number(int n)
 {
-	int i = 1 ;
-
-	/*if ( n == 1)
+	if (n <= 1)
 	{
-		printf("cer0 cond");
-		return(0);
+		return (0);
 	}
 
-	if ( n <= 0)
+	if (prime_number(n, 2))
 	{
-		printf("primera cond");
-		return(0);
+		return (1);
 	}
 
-	if ((i - 1) == 2)
-	{
-		printf("segunda cond");
-		return(1);
-	}
-	else
-	{
-		printf("tercera cond");
-		return(0);
-	}*/
-	
-	if ((n % i) == 0)
-	{
-		printf("cuarta cond");
-		i++;
-	}
-	printf("i=%d\n",i);
+	return (0);
 
+}
+/**
+ * prime_number - local function that returns 1 if the input integer is
+ *		    a prime number, otherwise return 0.
+ * @n :   input number
+ * @divisor :   input divisor, increment unit n
+ * Return: int
+ * On error, -1 is returned, and errno is set appropriately.
+ */
 
-	i = i + is_prime_number(n - 1);
-	if ((i - 1) == 2)
+int prime_number(int n, int divisor)
+{
+	if ((n / 2) < divisor)
 	{
-		return(1);
+		return (1);
 	}
 	else
 	{
-		return(0);
+		if ((n % divisor) == 0)
+		{
+			return (0);
+
+		}
+		else
+		{
+			return (prime_number(n, divisor + 1));
+		}
 	}
 }

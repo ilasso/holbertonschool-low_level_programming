@@ -13,6 +13,10 @@ int main(int argc, char *argv[])
 {
 	int suma = 0;
 	int i;
+	char *s;
+	int j;
+
+
 
 	if (argc < 2)
 	{
@@ -22,10 +26,15 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		if (!(atoi(argv[i]) && argv[i] != 0))
+		s = argv[i];
+		for (j = 0; *s != '\0'; j++)
 		{
-			printf("Error\n");
-			exit(1);
+			if (!(*s >= 48 && *s <= 57))
+			{
+				printf("Error\n");
+				exit(1);
+			}
+			s++;
 
 		}
 		suma += atoi(argv[i]);

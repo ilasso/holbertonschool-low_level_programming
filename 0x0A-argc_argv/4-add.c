@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 			return (1);
 
 		}
-		suma+=atoi(argv[i]);
+		suma += atoi(argv[i]);
 	}
 	printf("%d\n", suma);
 

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define UNUSED(argv)(void)(argv)
 /**
- * main - print quantity of arguments 
+ * main - print quantity of arguments
  * @argc: quantity of parameters
  * @argv: array char contain straing parameters including commando
  *

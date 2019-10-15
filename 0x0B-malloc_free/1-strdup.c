@@ -14,20 +14,21 @@
 char *_strdup(char *str)
 {
 
-	char *s = (char *) malloc(sizeof(char) * strlen(str)+1);
+	char *s;
 	unsigned int i;
 	unsigned int len;
-
-	/* len */
-	for ( len = 0; *str != '\0'; len++)
-
-
-	printf("tamaño=%ld-%ld\n",sizeof(char)*strlen(str)+1,len);
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
+
+	/* len */
+	for (len = 0; str[len] != '\0'; len++)
+	;
+
+	s = (char *) malloc(sizeof(char) * (len + 1));
+
 
 	if (s == NULL)
 	{
@@ -38,7 +39,6 @@ char *_strdup(char *str)
 	{
 		s[i] = str[i];
 	}
-
 
 	return (s);
 

@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 		}
 	}
 
-	totchars = qchars + (ac - 1) ; /* add number arguments to \n  and \0 */
+	totchars = qchars + ac  ; /* add number arguments to \n  and \0 */
 
 	a = (char *) malloc(totchars * sizeof(char));
 

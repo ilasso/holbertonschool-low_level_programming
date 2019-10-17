@@ -18,10 +18,10 @@ char *argstostr(int ac, char **av)
 	int totchars = 0;
 	char *a;
 
-	if (ac == 0 || av == NULL)
+	if (ac <= 0 || av == NULL)
 		return (NULL);
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 		}
 	}
 
-	totchars = qchars + ac  ; /* add number arguments to \n  and \0 */
+	totchars = qchars + ac + 1 ; /* add number arguments to \n  and \0 */
 
 	a = (char *) malloc(totchars * sizeof(char));
 
@@ -37,7 +37,7 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	totchars = 0;
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{

@@ -23,11 +23,12 @@ int *array_range(int min, int max)
 
 	if (a == NULL)
 		return (NULL);
-	values = min;
 
-	for (i = 0; i  <= max; i++)
+	values = 0;
+
+	for (i = min; i  <= max; i++)
 	{
-		a[i] = values;
+		a[values] = i;
 		values++;
 	}
 	return (a);

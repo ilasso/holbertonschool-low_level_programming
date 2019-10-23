@@ -16,6 +16,12 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 	int (*funcion)(int);
 
+	if (array == NULL || cmp == NULL)
+		return (-1);
+
+	if (size <= 0)
+		return (-1);
+
 	funcion = cmp;
 
 	for (i = 0; i < size; i++)
@@ -23,5 +29,5 @@ int int_index(int *array, int size, int (*cmp)(int))
 		if (funcion(array[i]))
 			return (i);
 	}
-return (i);
+return (-1);
 }

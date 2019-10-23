@@ -11,7 +11,13 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
+
 	void (*funcion)(char *);
+
+	if (name == NULL)
+		return;
+	if (f == NULL)
+		return;
 
 	funcion = f;
 

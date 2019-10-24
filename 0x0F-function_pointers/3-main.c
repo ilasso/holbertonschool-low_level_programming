@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit(98); /* arguments are wrong */
+		exit(98); /*  arguments are wrong */
 
 	}
 
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	if (funcion == NULL)
 	{
 		printf("Error\n");
-		exit(99); /* if operator is not +, - , *, /, %*/
+		exit(99); /*  operator is not +, - , *, /, %*/
 	}
 
 

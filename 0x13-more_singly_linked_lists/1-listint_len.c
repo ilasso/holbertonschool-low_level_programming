@@ -3,9 +3,10 @@
 #include <stdio.h>
 
 /**
- * print_listint -  function that returns the number of elements in a linked listint_t list.
+ * listint_len-function that returns the number of elements in
+ *		 a linked listint_t list.
  * @h:  pointer to struct
- * Return: size of a list
+ * Return: len of a list
  * On error, return NULL
  */
 size_t listint_len(const listint_t *h)

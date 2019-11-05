@@ -3,9 +3,10 @@
 #include <stdio.h>
 
 /**
- * free_listint - function that frees a listint_t list 
+ * pop_listint - function that deletes the head node of a listint_t
+ *		linked list, and returns the head node’s data (n)
  * @head:  pointer to head of a list
- * Return: size of a list
+ * Return: deleted data
  * On error, return NULL
  */
 int pop_listint(listint_t **head)
@@ -16,11 +17,10 @@ int pop_listint(listint_t **head)
 
 	n = (*head)->n;
 
-	
-	temp = (*head)->next ;
+	temp = (*head)->next;
 	free(*head);
 	*head = temp;
 
-	return(n);
+	return (n);
 
 }

@@ -41,14 +41,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buf);
 		return (0);
 	}
-	close(fd);
-	w = write(1, buf, n);
+	w = write(STDOUT_FILENO, buf, n);
 	if (w < 0)
 	{
 		close(fd);
 		free(buf);
 		return (0);
 	}
+	close(fd);
 	free(buf);
 	return (w);
 }

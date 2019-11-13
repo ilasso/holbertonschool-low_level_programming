@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 	ssize_t bulk;
 	ssize_t bulk2;
 	char rd[1024];
+	mode_t mode = S_IRUSR | S_IWUSR | S_IWGRP | S_IRGRP | S_IROTH;
 
 	if (argc != 3)
 	{
@@ -35,7 +36,7 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1));
 		exit(98);
 	}
-	destino = open(*(argv + 2), O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	destino = open(*(argv + 2), O_CREAT | O_WRONLY | O_TRUNC, mode);
 	if (destino < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", *(argv + 2));

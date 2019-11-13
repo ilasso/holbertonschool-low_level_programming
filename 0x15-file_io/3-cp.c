@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 			exit(98);
 		}
 		bulk2 = write(destino, rd, bulk);
-		if (bulk2 < 0)
+		if (bulk2 < 0 || bulk != bulk2)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", *(argv + 2));
 			exit(99);

@@ -5,6 +5,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include <unistd.h>
+void _close(int fd);
 /**
  * main - Make a copy of a file
  * @argc: Q arguments
@@ -24,19 +25,19 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(STDOUT_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	origen = open(*(argv + 1), O_RDONLY);
 	if (origen < 0)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", *(argv + 1));
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1));
 		exit(98);
 	}
 	destino = open(*(argv + 2), O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (destino < 0)
 	{
-		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", *(argv + 2));
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", *(argv + 2));
 		exit(99);
 	}
 	bulk = 1;
@@ -45,16 +46,20 @@ int main(int argc, char **argv)
 		bulk = read(origen, rd, 1024);
 		write(destino, rd, bulk);
 	}
-	close(origen);
-	close(destino);
+	_close(origen);
+	_close(destino);
 	return (0);
-
-
-
-
-
-
-
-
-
+}
+/**
+ * _close - close file an manage error
+ * @fd: file descriptor
+ * Return: void
+ */
+void _close(int fd)
+{
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE %d\n", fd);
+		exit(100);
+	}
 }

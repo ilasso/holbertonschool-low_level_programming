@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 	bulk = 1;
-	while (bulk != 0)
+	while (bulk > 0)
 	{
 		bulk = read(origen, rd, 1024);
 		if (bulk < 0)

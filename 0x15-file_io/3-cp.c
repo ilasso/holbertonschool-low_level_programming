@@ -42,20 +42,19 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 	bulk = 1;
-	while (bulk > 0)
+	while ((bulk = read(origen, rd, 1024)) > 0)
 	{
-		bulk = read(origen, rd, 1024);
-		if (bulk < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1));
-			exit(98);
-		}
 		bulk2 = write(destino, rd, bulk);
 		if (bulk2 < 0 || bulk != bulk2)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", *(argv + 2));
 			exit(99);
 		}
+	}
+	if (bulk < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1));
+		exit(98);
 	}
 	_close(origen);
 	_close(destino);

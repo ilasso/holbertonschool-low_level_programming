@@ -21,6 +21,7 @@ int main(int argc, char **argv)
 	ssize_t origen;
 	ssize_t destino;
 	ssize_t bulk;
+	ssize_t bulk2;
 	char rd[1024];
 
 	if (argc != 3)
@@ -44,7 +45,17 @@ int main(int argc, char **argv)
 	while (bulk != 0)
 	{
 		bulk = read(origen, rd, 1024);
-		write(destino, rd, bulk);
+		if (bulk < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", *(argv + 1));
+			exit(98);
+		}
+		bulk2 = write(destino, rd, bulk);
+		if (bulk2 < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", *(argv + 2));
+			exit(99);
+		}
 	}
 	_close(origen);
 	_close(destino);

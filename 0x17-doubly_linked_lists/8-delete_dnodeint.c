@@ -19,7 +19,7 @@ while (temp->next != NULL)
 	temp = temp->next;
 	count++;
 }
-if (count <= index) /*invalid index*/
+if (count < index) /*invalid index*/
 	return (-1);
 if (temp->next == NULL && temp->prev == NULL)/*lastone & unique node*/
 {	todel = temp;

@@ -19,21 +19,21 @@ while (temp->next != NULL)
 	temp = temp->next;
 	count++;
 }
-if (count < index)
+if (count < index) /*invalid index*/
 	return (-1);
-if (temp->next == NULL && temp->prev == NULL)
-{	temp = NULL;
-	*head = temp;
-	free(*head);
+if (temp->next == NULL && temp->prev == NULL)/*lastone & unique node*/
+{	todel = temp;
+	*head = NULL;
+	free(todel);
 	return (1); }
-if (index == 0)
+if (index == 0) /*if del the firts node*/
 {	todel = temp;
 	temp = temp->next;
 	temp->prev = NULL;
 	*head = temp;
 	free(todel);
 	return (1); }
-if (temp->next == NULL && count > 1)
+if (temp->next == NULL && count > 1)/*last node but nonunique*/
 {	todel = temp;
 	temp = temp->prev;
 	temp->next = NULL;

@@ -13,12 +13,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *newhshnode;
 	unsigned long int idxHsh = 0;
 
+	if (ht == NULL)
+		return (0);
+	if (ht->size == 0)
+		return (0);
+	if (ht->array == NULL)
+		return (0)
 	if (key == NULL || strcmp(key, "") == 0)
 		return (0);
 
 	idxHsh = key_index((unsigned char *) key, ht->size); /*get index hash*/
 	hshnode = ht->array[idxHsh]; /*get head of single linked list*/
-
 
 	/* if idx have a value was a colision check if de key exist */
 	while (hshnode != NULL)
